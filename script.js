@@ -252,21 +252,18 @@ const SITE_CONFIG = {
     if (url) {
       a.href = url;
     } else {
-      a.removeAttribute("href");
-      a.removeAttribute("target");
-      a.classList.add("is-soon");
-      a.setAttribute("aria-disabled", "true");
-      a.title = "الحساب يُضاف قريبًا";
-      if (!a.classList.contains("social-btn--icon")) {
-        const tag = document.createElement("span");
-        tag.className = "soon-tag";
-        tag.textContent = "(قريبًا)";
-        a.appendChild(tag);
-      }
+      a.hidden = true;
     }
+  });
+  document.querySelectorAll("[data-social-group]").forEach((g) => {
+    if (!g.querySelector("[data-social]:not([hidden])")) g.hidden = true;
   });
 
   const email = (SITE_CONFIG.email || "").trim();
+  if (email) {
+    document.querySelectorAll("[data-email-row]").forEach((r) => (r.hidden = false));
+    const f = document.getElementById("contactForm"); if (f) f.hidden = false;
+  }
   document.querySelectorAll("[data-email-link]").forEach((a) => {
     if (email) { a.href = "mailto:" + email; a.textContent = email; a.dir = "ltr"; }
     else { a.removeAttribute("href"); a.textContent = "يُضاف قريبًا"; }

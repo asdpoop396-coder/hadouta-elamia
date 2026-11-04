@@ -1012,3 +1012,9 @@ p { margin: 0 0 1rem; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* إطار ذهبي لصورة الباحثة وصور الشخصيات */
+.researcher-photo { border: 1px solid var(--gold); box-shadow: 0 0 0 6px var(--navy-deep), 0 0 0 7px var(--gold); background: var(--navy-deep); }
+.researcher-photo img, .person-photo img, .pioneer-photo img { object-fit: cover; object-position: center top; }
+.person-photo img { filter: none; }
+.contact-grid:has(.contact-form[hidden]) { grid-template-columns: 1fr; max-width: 720px; }
