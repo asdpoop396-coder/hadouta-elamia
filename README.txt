@@ -129,19 +129,13 @@ README.txt   ← هذا الملف
 ---------------------------------------------------------
 ٦) الرفع والنشر المجاني عبر GitHub Pages
 ---------------------------------------------------------
-١. أنشئ مستودعًا عامًا باسم hadouta-elamia على GitHub، واتركه فارغًا دون README أو ملفات أولية.
-٢. افتح Terminal داخل مجلد المشروع. إذا لم يكن Git قد بدأ فيه بعد، نفّذ:
-     git init -b main
-     git add .
-     git commit -m "Initial website"
-٣. اربط المستودع (استبدل USERNAME باسم حساب GitHub) ثم ارفع الملفات:
-     git remote add origin https://github.com/USERNAME/hadouta-elamia.git
-     git push -u origin main
-٤. من إعدادات المستودع افتح Settings ← Pages، واختر GitHub Actions كمصدر للنشر.
-٥. بعد نجاح Deploy to GitHub Pages في تبويب Actions، يظهر رابط الموقع في Settings ← Pages.
+١. ارفع ملفات الموقع إلى فرع main في مستودع GitHub العام.
+٢. من إعدادات المستودع افتح Settings ← Pages.
+٣. تحت Build and deployment اختر Deploy from a branch، ثم الفرع main والمجلد /(root)، واضغط Save.
+٤. بعد اكتمال النشر، يظهر رابط الموقع في Settings ← Pages، وغالبًا يكون:
+     https://USERNAME.github.io/hadouta-elamia/
 
-ملف .github/workflows/pages.yml ينشر الموقع تلقائيًا مع كل تحديث يُرفع إلى فرع main.
-إذا كان remote باسم origin موجودًا، استخدم git remote set-url origin URL بدلًا من أمر الإضافة.
+كل تحديث يُرفع إلى فرع main يُنشر تلقائيًا من المجلد الرئيسي.
 لتحديث الموقع لاحقًا، نفّذ git add . ثم git commit ثم git push.
 
 لا تضع كلمات مرور أو مفاتيح وصول أو بيانات سرية في ملفات المستودع.

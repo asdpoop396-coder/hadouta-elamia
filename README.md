@@ -8,19 +8,12 @@
 
 ## النشر على GitHub Pages
 
-1. أنشئ مستودعًا عامًا باسم `hadouta-elamia` على GitHub، واترك خيار إضافة README أو ملفات أخرى غير محدد.
-2. من مجلد المشروع، اربط المستودع وارفع الملفات:
+1. ارفع الملفات إلى الفرع `main` في المستودع العام.
+2. من إعدادات المستودع افتح **Settings → Pages**.
+3. ضمن **Build and deployment**، اختر **Deploy from a branch**، ثم الفرع `main` والمجلد `/(root)` واضغط **Save**.
+4. بعد اكتمال النشر، افتح رابط الموقع الظاهر في **Settings → Pages**. غالبًا سيكون `https://USERNAME.github.io/hadouta-elamia/`.
 
-   ```powershell
-   git remote add origin https://github.com/USERNAME/hadouta-elamia.git
-   git push -u origin main
-   ```
-
-   استبدل `USERNAME` باسم حسابك. إذا كان للمشروع remote باسم `origin`، استخدم `git remote set-url origin https://github.com/USERNAME/hadouta-elamia.git` بدلًا من أمر الإضافة.
-3. من إعدادات المستودع افتح **Settings → Pages**، واجعل مصدر النشر **GitHub Actions** إذا لم يكن محددًا تلقائيًا.
-4. بعد نجاح سير العمل **Deploy to GitHub Pages** في تبويب **Actions**، سيظهر رابط الموقع في **Settings → Pages**. غالبًا سيكون `https://USERNAME.github.io/hadouta-elamia/`.
-
-ملف `.github/workflows/pages.yml` ينشر الموقع تلقائيًا عند كل دفع إلى فرع `main`.
+كل تحديث يُرفع إلى فرع `main` يُنشر تلقائيًا من المجلد الرئيسي.
 
 ## التعديل والمحتوى
 
